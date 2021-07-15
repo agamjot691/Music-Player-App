@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
+
+    <title>Mix</title>
+</head>
+
+<body style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAFVBMVEUA/4AA/7MA/40A/5kA/6YA/5gA/6W2WEC7AAABAUlEQVR4nO3QMQEAIAwDsA0G/iXjoQ9PIiFVmZXZkTOR25mwxIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixIkTJ06cOHHixImTrycPZ1yMFoVVP1kAAAAASUVORK5CYII='); background-size: cover">
+    <div class="Title-container" style = "background-size: cover;">MixTube</div>
+
+    <div class="song-container">
+        Songs
+        <div class="song effects" id="1"> Dil Ibadat</div>
+        <div class="song effects" id="2"> Kangana </div>
+        <div class="song effects" id="3"> HotLIne Bling</div>
+        <div class="song effects" id="4">Dil Tod Ke </div>
+        <div class="song effects" id="5">Runaway </div>
+        <div class="song effects" id="6">Alone </div>
+    </div>
+
+    <div class="img-container">
+        <img id="img" src="Music.jpg">
+    </div>
+   <div class = "Name"></div>
+   <div class = "Artist-name"></div>
+
+    <div class="progress-bar-container">
+        <canvas id='progress-bar' width="600" height="10" style="border:3px solid rgb(0, 3, 0)  ;"></canvas>
+        <div class = "duration">0:00</div>
+        <div class="Total-duration">0:00</div>
+    </div>
+    <div class="Music-Player">
+        <audio autoplay controls id = "cur" hidden="true"  ontimeupdate= " 
+           var sm = parseInt(audioPlayer.duration % 60);
+      var mm = parseInt((audioPlayer.duration / 60) % 60);
+        var s = parseInt(audioPlayer.currentTime % 60);
+        var m = parseInt((audioPlayer.currentTime / 60) % 60);
+     
+      
+      if(sm < 10){
+        if(mm + ':0' + sm !='NaN:NaN'){   
+      document.querySelector('.Total-duration').innerHTML =  mm + ':0' + sm ;
+        }
+    }
+      else{
+          if(mm + ':' + sm !='NaN:NaN'){
+        document.querySelector('.Total-duration').innerHTML =  mm + ':' + sm ;
+          }
+      } 
+        if(s<10){
+        document.querySelector('.duration').innerHTML = m + ':0' + s ;}
+        else{
+            document.querySelector('.duration').innerHTML = m + ':' + s ;
+        }
+        ">
+            <source id="s1" src="Dil Ibaadat.mp3">
+            </src>
+            <source id="s2" src="Kangana Tera Ni(PaglaSongs).mp3">
+            </src>
+            <source id="s3" src="Drake-Hotline-Bling.mp3">
+            </src>
+            <source id="s4" src="dil tod ke.mp3">
+            </src>
+            <source id="s5" src="AURORA-Runaway.mp3">
+            </src>
+            <source id="s6" src="Alan-Walker-Alone.mp3">
+            </src>
+        </audio>
+
+        <input type="range" id="volume-control" style= "border:1px solid;">
+        <div class = "volume-icon material-icons">volume_up</div>
+
+        <div class="prev-btn material-icons "
+            style="position:absolute; top:1vh; left:10vw ;height:10vh; width:10vh ;font-size: 4.5rem ; cursor:pointer ">
+            skip_previous</div>
+        <div class="play-btn material-icons"
+            style="position:absolute; top:1vh; left:20vw ;height:10vh; width:10vh ;font-size: 4.5rem; cursor:pointer ; ">
+            play_arrow</div>
+        <div class="next-btn material-icons"
+            style="position:absolute; top:1vh; left:30vw ;height:10vh; width:10vh;font-size: 4.5rem; cursor:pointer">
+            skip_next</div>
+        <div class="loop-btn material-icons"
+            style="position:absolute; top:1vh; left:40vw ;height:10vh; width:10vh;font-size: 4.5rem; cursor:pointer">
+            loop</div>
+
+        <div class="liked-btn material-icons"
+            style="position: fixed; top:11vh; left:67vw ;height:10vh; width:10vh;font-size: 3.5rem; cursor:pointer">
+            favorite_border</div>
+        <div class= "Liked-container">
+            Your PlayList
+        </div>
+    </div>
+
+
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
